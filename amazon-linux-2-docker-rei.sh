@@ -89,7 +89,7 @@ for RunnerRegToken in ${GITLABRunnerRegTokenList//;/ }
       --name $RunnerName \
       --config $RunnerConfigToml \
       --url "$GITLABRunnerInstanceURL" \
-      $TokenParameters \ 
+      $TokenParameters \
       --executor "$GITLABRunnerExecutor" \
       --cache-type "s3" \
       --cache-path "/" \
