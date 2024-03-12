@@ -74,6 +74,9 @@ fi
 $RunnerInstallRoot/gitlab-runner install --user="gitlab-runner" --working-directory="/gitlab-runner"
 echo -e "\nRunning scripts as '$(whoami)'\n\n"
 
+# create .m2 repo folder
+mkdir /home/.m2
+
 for RunnerRegToken in ${GITLABRunnerRegTokenList//;/ }
   do
 
