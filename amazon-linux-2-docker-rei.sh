@@ -101,7 +101,7 @@ for RunnerRegToken in ${GITLABRunnerRegTokenList//;/ }
       --cache-s3-bucket-name $GITLABRunnerS3CacheBucket \
       --cache-s3-bucket-location $AWS_REGION \
       --docker-volumes "/certs/client" \
-      --docker-volumes "/home/.m2" \
+      --docker-volumes "/home/.m2:/home/.m2" \
       --docker-image "$GITLABRunnerDockerImage" \
       --docker-privileged \
       --docker-pull-policy if-not-present
