@@ -53,6 +53,12 @@ if [[ -z "$(command -v docker)" ]] ; then
   echo "Docker not present, installing..."
   amazon-linux-extras install docker
   usermod -a -G docker ec2-user
+  # Update the docker daemon to use docker mirror
+  cat << EndOfDockerConfig > /etc/docker/daemon.json
+{
+  "registry-mirrors": ["https://docker-repo.rei-cloud.com"]
+}
+EndOfDockerConfig
   systemctl enable docker.service
   systemctl start docker.service
 fi
