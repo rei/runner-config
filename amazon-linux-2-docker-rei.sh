@@ -54,7 +54,7 @@ if [[ -z "$(command -v docker)" ]] ; then
   amazon-linux-extras install docker
   usermod -a -G docker ec2-user
   # Update the docker daemon to use docker mirror
-  cat << EndOfDockerConfig >> /etc/docker/daemon.json
+  cat << EndOfDockerConfig > /etc/docker/daemon.json
 {
   "registry-mirrors": ["https://docker-repo.rei-cloud.com"]
 }
