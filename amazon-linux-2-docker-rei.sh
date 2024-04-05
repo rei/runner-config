@@ -108,6 +108,7 @@ for RunnerRegToken in ${GITLABRunnerRegTokenList//;/ }
       --cache-s3-bucket-location $AWS_REGION \
       --docker-volumes "/certs/client" \
       --docker-volumes "/home/.m2:/home/.m2" \
+      --docker-volumes "/etc/docker/daemon.json:/etc/docker/daemon.json" \
       --docker-image "$GITLABRunnerDockerImage" \
       --docker-privileged \
       --docker-pull-policy if-not-present
