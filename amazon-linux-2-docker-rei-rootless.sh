@@ -111,7 +111,10 @@ for RunnerRegToken in ${GITLABRunnerRegTokenList//;/ }
       --docker-volumes "/etc/docker/daemon.json:/etc/docker/daemon.json" \
       --docker-image "$GITLABRunnerDockerImage" \
       --docker-services_privileged "true" \
-      --docker-allowed-privileged-services "docker.io/library/docker:*-dind-rootless,docker.io/library/docker:dind-rootless,docker:*-dind-rootless,docker:dind-rootless" \
+      --docker-allowed-privileged-services "docker.io/library/docker:*-dind-rootless" \
+      --docker-allowed-privileged-services "docker.io/library/docker:dind-rootless" \
+      --docker-allowed-privileged-services "docker:*-dind-rootless" \
+      --docker-allowed-privileged-services "docker:dind-rootless" \
       --docker-pull-policy if-not-present
 done
 
