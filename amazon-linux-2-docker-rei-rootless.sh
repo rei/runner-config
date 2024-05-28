@@ -110,6 +110,7 @@ for RunnerRegToken in ${GITLABRunnerRegTokenList//;/ }
       --docker-volumes "/home/.m2:/home/.m2" \
       --docker-volumes "/etc/docker/daemon.json:/etc/docker/daemon.json" \
       --docker-image "$GITLABRunnerDockerImage" \
+      --docker-privileged \
       --docker-services_privileged "true" \
       --docker-allowed-privileged-services "docker.io/library/docker:*-dind-rootless" \
       --docker-allowed-privileged-services "docker.io/library/docker:dind-rootless" \
