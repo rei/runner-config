@@ -111,7 +111,8 @@ for RunnerRegToken in ${GITLABRunnerRegTokenList//;/ }
       --docker-volumes "/etc/docker/daemon.json:/etc/docker/daemon.json" \
       --docker-image "$GITLABRunnerDockerImage" \
       --docker-privileged \
-      --docker-pull-policy if-not-present
+      --docker-pull-policy if-not-present \
+      --output-limit "16384"
 done
 
 sed -i "s/^\s*concurrent.*/concurrent = $GITLABRunnerConcurrentJobs/g" $RunnerConfigToml
